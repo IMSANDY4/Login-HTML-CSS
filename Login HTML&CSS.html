@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9f1ca9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #aa6fa4;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #ce27b5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #dedede;
+        }
+
+        .signup-link {
+            margin-top: 10px;
+        }
+
+        .signup-link a {
+            text-decoration: none;
+            color: #cbc9cb;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+        <div class="error-message" id="error-message"></div>
+    </div>
+
+    <script>
+        // JavaScript for handling form submission and validation
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // You can add your authentication logic here.
+            // For this example, we'll just show an error message.
+            if (username === "example" && password === "password") {
+                // Successful login, you can redirect or perform other actions here.
+                alert("Login successful!");
+            } else {
+                document.getElementById("error-message").textContent = "Invalid username or password";
+            }
+        });
+    </script>
+</body>
+</html>
